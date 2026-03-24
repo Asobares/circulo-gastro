@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ========================================
+         INSTRUCCIONES PARA CREAR UN NUEVO ARTÍCULO:
+         
+         1. Duplica este archivo con un nuevo nombre (ej: mi-nuevo-articulo.html)
+         2. Cambia el <title> con el título de tu artículo
+         3. Actualiza la imagen del hero (article-hero-image)
+         4. Cambia la categoría, fecha y autor
+         5. Escribe tu contenido en la sección article-body
+         6. Guarda la imagen destacada en /img/blog/
+         7. Agrega el artículo a blog.html y a index.html
+         
+         ESTRUCTURA DE CARPETAS:
+         /blog/
+           ├── mi-articulo.html
+           └── otro-articulo.html
+         /img/blog/
+           ├── mi-articulo.jpg
+           └── otro-articulo.jpg
+    ======================================== -->
+    
+    <title>Las 10 tendencias gastronómicas que dominarán el 2026 | Círculo Gastro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        /* Estilos específicos para artículos */
+        .article-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 10%;
+            margin-top: 80px;
+        }
+        
+        .article-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 30%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+        
+        .article-hero-content {
+            max-width: 800px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: #fff;
+            color: #0a0a0a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 25px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--text-white);
+        }
+        
+        /* Estilos del contenido del artículo */
+        .article-body {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .article-body p {
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+        
+        .article-body h2 {
+            font-size: 1.8rem;
+            margin: 50px 0 20px;
+            color: var(--text-white);
+        }
+        
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin: 40px 0 15px;
+            color: var(--text-white);
+        }
+        
+        .article-body ul,
+        .article-body ol {
+            margin: 20px 0 30px 25px;
+            color: #ccc;
+        }
+        
+        .article-body li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .article-body img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 35px 0;
+        }
+        
+        .article-body blockquote {
+            border-left: 4px solid var(--text-white);
+            padding-left: 25px;
+            margin: 35px 0;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ddd;
+        }
+        
+        .article-body a {
+            color: var(--text-white);
+            text-decoration: underline;
+        }
+        
+        .article-body a:hover {
+            text-decoration: none;
+        }
+        
+        /* Autor */
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-top: 60px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        
+        /* Compartir */
+        .article-share {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .article-share span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: var(--text-white);
+            color: var(--bg-color);
+            border-color: var(--text-white);
+        }
+        
+        /* Artículos relacionados */
+        .related-articles {
+            padding: 80px 10%;
+            background: var(--bg-card);
+        }
+        
+        .related-articles h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.8rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-hero {
+                height: auto;
+                min-height: 400px;
+                padding: 40px 5%;
+            }
+            
+            .article-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-container {
+                padding: 40px 5% 60px;
+            }
+            
+            .article-body {
+                font-size: 1rem;
+            }
+            
+            .article-author {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#contacto" class="btn-outline">Unirse a la Iniciativa</a>
+        <div class="logo">
+            <img src="/img/circulo-gastro-logo.png" alt="Círculo Gastro">
+        </div>
+        <a href="#pricing" class="btn-premium">Acceso Premium</a>
+    </nav>
+
+    <!-- HERO DEL ARTÍCULO -->
+    <header class="article-hero">
+        <!-- CAMBIAR: Imagen destacada del artículo -->
+        <img src="/img/blog/Cocteleria_consciente.JPG" alt="Tendencias gastronómicas 2026" class="article-hero-image">
+        
+        <div class="article-hero-content">
+            <!-- CAMBIAR: Categoría del artículo -->
+            <span class="article-category">Tendencias</span>
+            
+            <!-- CAMBIAR: Título del artículo -->
+            <h1>Coctelería consciente: menos alcohol, más diseño y
+                creatividad líquida</h1>
+            
+            <div class="article-meta">
+                <!-- CAMBIAR: Fecha de publicación -->
+                <span><i class="far fa-calendar"></i> 15 Febrero 2026</span>
+                <!-- CAMBIAR: Tiempo de lectura -->
+                <span><i class="far fa-clock"></i> 8 min de lectura</span>
+                <!-- CAMBIAR: Autor -->
+                <span><i class="far fa-user"></i> Por María García</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEL ARTÍCULO -->
+    <main class="article-container">
+        <a href="/img/blog/Cocteleria_consciente.JPG" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+        
+        <!-- CAMBIAR: Todo el contenido del artículo va aquí -->
+        <div class="article-body">
+            
+            <p>La coctelería está viviendo una de sus transformaciones más interesantes de los últimos
+                años. Lejos de desaparecer, el alcohol está siendo replanteado, cuestionado y rediseñado.
+                Aparece así una nueva escena donde el foco no está en la graduación alcohólica, sino en la
+                creatividad, el sabor, la estética y el bienestar —una tendencia que impulsa a bares
+                alrededor del mundo a repensar sus barras y sus cartas para ofrecer experiencias más
+                inclusivas, memorables y sofisticadas.</p>
+            
+            <!-- EJEMPLO: Imagen dentro del artículo -->
+            <img src="./img/blog/Cocteleria_consciente.JPG" alt="Prácticas sostenibles en restaurantes">
+            
+            <p>Los llamados mocktails ya no son alternativas improvisadas o simples “tragos sin alcohol”.
+                Hoy existen cartas completas de coctelería sin alcohol o de bajo contenido alcohólico,
+                desarrolladas con el mismo nivel de complejidad y detalle que un cóctel clásico.
+                Ingredientes como destilados 0.0, espirituosos sin alcohol, botánicos, fermentos naturales,
+                infusiones herbales, vinagres artesanales y técnicas de laboratorio conviven en barras que,
+                más que estaciones de bebidas, parecen laboratorios creativos donde cada trago es una
+                obra sensorial. El resultado es una coctelería que no renuncia a la sofisticación, incluso sin
+                alcohol, y que responde a la demanda de consumidores curiosos, saludables y exigentes.
+                Este movimiento dialoga directamente con las nuevas formas de socializar.</p>
+                
+                <p>En la actualidad, el bar deja de ser exclusivamente un espacio para beber alcohol y se convierte
+                en un lugar de encuentro más inclusivo, donde todos pueden participar de la experiencia
+                sin sentirse fuera de ella. Beber menos —o nada— ya no es una limitación ni un estigma: es
+                una elección estética, cultural y de bienestar. Las personas buscan equilibrio, sabor y
+                sentido sin sacrificar la vivencia social que brinda una noche fuera.
+                Desde el punto de vista del diseño, esta tendencia se traduce en la elección de cristalería
+                cuidadosa, presentaciones sofisticadas y una puesta en escena que no diferencia
+                visualmente un cóctel alcohólico de uno sin alcohol. La experiencia es la misma: ritual,
+                sorpresa y disfrute. La barra se transforma en un espacio de exploración sensorial, donde el
+                bartender deja de ser simplemente un preparador de bebidas y se convierte en creador,
+                investigador y anfitrión que guía al comensal a través de texturas, aromas y sabores.
+                Además, la coctelería consciente conecta con valores contemporáneos como la salud, la
+                conciencia corporal, la moderación y el estilo de vida equilibrado. No se trata de moralizar
+                el consumo, sino de ofrecer alternativas igual de atractivas y memorables. De hecho,
+                muchas propuestas contemporáneas exploran ingredientes funcionales como kombucha,
+                adaptógenos o infusiones herbales que aportan beneficios adicionales al trago,
+                contribuyendo a una narrativa de bienestar incluso dentro de la socialización nocturna. </p>
+                
+                <p>En el ecosistema del gastroentretenimiento —donde la experiencia total lo es todo— la
+                coctelería consciente no es una moda pasajera: es una evolución natural hacia bares más
+                inteligentes, sensibles y conectados con su tiempo. Estos lugares entienden que ofrecer
+                opciones sin alcohol no es restar, sino sumar en creatividad, diseño y negocio, porque</p>
+                
+                amplía la audiencia, mejora la satisfacción del cliente y refuerza una propuesta de valor que
+                apuesta por la inclusión, la innovación y el placer sin prejuicios. 
+            
+            </div>
+        
+        <!-- INFORMACIÓN DEL AUTOR -->
+        <div class="article-author">
+            <!-- CAMBIAR: Foto del autor -->
+            <img src="../img/blog/autor-maria.jpg" alt="María García" class="author-avatar">
+            <div class="author-info">
+                <!-- CAMBIAR: Nombre y descripción del autor -->
+                <h4>Fuente</h4>
+                <p>Fuente: Gastrolab Web, artículo “Mocktails: la revolución de las bebidas sin alcohol”,
+                    publicado el 17 de enero de 2025 por Gastrolab — un medio digital especializado en
+                    tendencias de gastronomía y bebidas que analiza cómo las bebidas sin alcohol han pasado
+                    de ser alternativas a formar parte de la oferta sofisticada de coctelería en bares y
+                    restaurantes a nivel global.</p>
+            </div>
+        </div>
+        
+        <!-- COMPARTIR EN REDES -->
+        <div class="article-share">
+            <span>Compartir:</span>
+            <a href="#" class="share-btn" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn" title="Compartir en Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="share-btn" title="Compartir en LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="share-btn" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </main>
+
+    <!-- ARTÍCULOS RELACIONADOS -->
+    <section class="related-articles">
+        <h2>Artículos Relacionados</h2>
+        <div class="related-grid">
+            
+            <!-- Artículo relacionado 1 -->
+            <article class="blog-card">
+                <a href="nuevas-regulaciones-2026.html" class="blog-link-wrapper">
+                    <div class="blog-image">
+                        <img src="../img/blog/regulaciones.jpg" alt="Nuevas regulaciones">
+                        <span class="blog-category">Normativa</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar"></i> 10 Febrero 2026</span>
+                        <h3>Nuevas regulaciones para establecimientos nocturnos</h3>
+                        <span class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <!-- Artículo relacionado 2 -->
+            <article class="blog-card">
+                <a href="diseno-interior-experiencia.html" class="blog-link-wrapper">
+                    <div class="blog-image">
+                        <img src="../img/blog/diseno-interior.jpg" alt="Diseño de interiores">
+                        <span class="blog-category">Diseño</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar"></i> 5 Febrero 2026</span>
+                        <h3>Cómo el diseño interior impacta la experiencia del cliente</h3>
+                        <span class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="partners">
+            <div class="partner-name">Asobares Colombia</div>
+            <div class="partner-name">Nightlife International</div>
+            <div class="partner-name">Expobar</div>
+            <div class="partner-name">Expo DJ</div>
+        </div>
+        <p class="footer-copy">© 2026 Círculo Gastro. www.asobares.org</p>
+    </footer>
+
+</body>
+</html>

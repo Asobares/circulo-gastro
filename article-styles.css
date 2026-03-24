@@ -1,0 +1,213 @@
+/* === ESTILOS PARA ARTÍCULOS DEL BLOG === */
+
+/* Hero del artículo */
+.article-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 60px 20px;
+    margin-top: 140px;
+}
+
+.article-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.article-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 0;
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+}
+
+.article-category {
+    display: inline-block;
+    background: #ffffff;
+    color: #0a0a0a;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.article-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.article-meta i {
+    margin-right: 8px;
+}
+
+/* Contenedor del artículo */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 100px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+/* Cuerpo del artículo */
+.article-body {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.article-lead {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #333;
+}
+
+.article-body h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.article-body p {
+    margin-bottom: 25px;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #fff;
+    padding: 20px 30px;
+    margin: 40px 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.article-source {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Compartir */
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+}
+
+.article-share span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.share-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: #fff;
+    color: #0a0a0a;
+    border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-hero {
+        height: 60vh;
+        min-height: 400px;
+        margin-top: 100px;
+    }
+    
+    .article-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .article-body {
+        font-size: 1rem;
+    }
+    
+    .article-lead {
+        font-size: 1.1rem;
+    }
+    
+    .article-body h2 {
+        font-size: 1.3rem;
+    }
+    
+    .article-body blockquote {
+        padding: 15px 20px;
+        font-size: 1.05rem;
+    }
+}

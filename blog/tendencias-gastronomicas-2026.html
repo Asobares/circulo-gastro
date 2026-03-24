@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ========================================
+         INSTRUCCIONES PARA CREAR UN NUEVO ARTÍCULO:
+         
+         1. Duplica este archivo con un nuevo nombre (ej: mi-nuevo-articulo.html)
+         2. Cambia el <title> con el título de tu artículo
+         3. Actualiza la imagen del hero (article-hero-image)
+         4. Cambia la categoría, fecha y autor
+         5. Escribe tu contenido en la sección article-body
+         6. Guarda la imagen destacada en /img/blog/
+         7. Agrega el artículo a blog.html y a index.html
+         
+         ESTRUCTURA DE CARPETAS:
+         /blog/
+           ├── mi-articulo.html
+           └── otro-articulo.html
+         /img/blog/
+           ├── mi-articulo.jpg
+           └── otro-articulo.jpg
+    ======================================== -->
+    
+    <title>Las 10 tendencias gastronómicas que dominarán el 2026 | Círculo Gastro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        /* Estilos específicos para artículos */
+        .article-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 10%;
+            margin-top: 80px;
+        }
+        
+        .article-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 30%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+        
+        .article-hero-content {
+            max-width: 800px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: #fff;
+            color: #0a0a0a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 25px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--text-white);
+        }
+        
+        /* Estilos del contenido del artículo */
+        .article-body {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .article-body p {
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+        
+        .article-body h2 {
+            font-size: 1.8rem;
+            margin: 50px 0 20px;
+            color: var(--text-white);
+        }
+        
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin: 40px 0 15px;
+            color: var(--text-white);
+        }
+        
+        .article-body ul,
+        .article-body ol {
+            margin: 20px 0 30px 25px;
+            color: #ccc;
+        }
+        
+        .article-body li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .article-body img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 35px 0;
+        }
+        
+        .article-body blockquote {
+            border-left: 4px solid var(--text-white);
+            padding-left: 25px;
+            margin: 35px 0;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ddd;
+        }
+        
+        .article-body a {
+            color: var(--text-white);
+            text-decoration: underline;
+        }
+        
+        .article-body a:hover {
+            text-decoration: none;
+        }
+        
+        /* Autor */
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-top: 60px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        
+        /* Compartir */
+        .article-share {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .article-share span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: var(--text-white);
+            color: var(--bg-color);
+            border-color: var(--text-white);
+        }
+        
+        /* Artículos relacionados */
+        .related-articles {
+            padding: 80px 10%;
+            background: var(--bg-card);
+        }
+        
+        .related-articles h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.8rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-hero {
+                height: auto;
+                min-height: 400px;
+                padding: 40px 5%;
+            }
+            
+            .article-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-container {
+                padding: 40px 5% 60px;
+            }
+            
+            .article-body {
+                font-size: 1rem;
+            }
+            
+            .article-author {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="btn-outline"><i class="fas fa-arrow-left"></i> Inicio</a>
+        <div class="logo">
+            <img src="/img/circulo-gastro-logo.png" alt="Círculo Gastro">
+        </div>
+        <a href="../index.html#pricing" class="btn-premium">Acceso Premium</a>
+    </nav>
+
+    <!-- HERO DEL ARTÍCULO -->
+    <header class="article-hero">
+        <!-- CAMBIAR: Imagen destacada del artículo -->
+        <img src="../img/blog/tendencias-2026.jpg" alt="Tendencias gastronómicas 2026" class="article-hero-image">
+        
+        <div class="article-hero-content">
+            <!-- CAMBIAR: Categoría del artículo -->
+            <span class="article-category">Tendencias</span>
+            
+            <!-- CAMBIAR: Título del artículo -->
+            <h1>Las 10 tendencias gastronómicas que dominarán el 2026</h1>
+            
+            <div class="article-meta">
+                <!-- CAMBIAR: Fecha de publicación -->
+                <span><i class="far fa-calendar"></i> 15 Febrero 2026</span>
+                <!-- CAMBIAR: Tiempo de lectura -->
+                <span><i class="far fa-clock"></i> 8 min de lectura</span>
+                <!-- CAMBIAR: Autor -->
+                <span><i class="far fa-user"></i> Por María García</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEL ARTÍCULO -->
+    <main class="article-container">
+        <a href="../blog.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver al blog
+        </a>
+        
+        <!-- CAMBIAR: Todo el contenido del artículo va aquí -->
+        <div class="article-body">
+            
+            <p>El sector gastronómico y de entretenimiento está en constante evolución. Cada año trae consigo nuevas tendencias que transforman la manera en que operamos, servimos y conectamos con nuestros clientes. En este artículo, exploramos las 10 tendencias más importantes que definirán el 2026.</p>
+            
+            <h2>1. Sostenibilidad como prioridad absoluta</h2>
+            
+            <p>La sostenibilidad ya no es opcional. Los consumidores de hoy exigen transparencia en el origen de los ingredientes, prácticas responsables de gestión de residuos y un compromiso real con el medio ambiente.</p>
+            
+            <p>Los establecimientos que implementen prácticas sostenibles no solo contribuirán al planeta, sino que también verán un impacto positivo en su imagen de marca y fidelización de clientes.</p>
+            
+            <!-- EJEMPLO: Imagen dentro del artículo -->
+            <img src="../img/blog/sostenibilidad.jpg" alt="Prácticas sostenibles en restaurantes">
+            
+            <h2>2. Experiencias inmersivas</h2>
+            
+            <p>Los clientes buscan más que una comida; quieren una experiencia memorable. Esto incluye:</p>
+            
+            <ul>
+                <li>Ambientación temática única</li>
+                <li>Música en vivo o curada específicamente</li>
+                <li>Maridajes especiales y menús degustación</li>
+                <li>Elementos interactivos y participativos</li>
+            </ul>
+            
+            <blockquote>
+                "El futuro de la gastronomía no está solo en el plato, sino en la historia completa que contamos alrededor de él."
+            </blockquote>
+            
+            <h2>3. Tecnología integrada</h2>
+            
+            <p>Desde menús digitales hasta sistemas de reserva inteligentes, la tecnología está transformando la operación de bares y restaurantes. Las herramientas de análisis de datos permiten entender mejor a los clientes y optimizar cada aspecto del negocio.</p>
+            
+            <h3>Tecnologías clave para 2026:</h3>
+            
+            <ol>
+                <li><strong>Sistemas de gestión integrados:</strong> Inventario, personal y ventas en una sola plataforma</li>
+                <li><strong>Pagos sin contacto:</strong> Rapidez y seguridad en las transacciones</li>
+                <li><strong>Automatización de marketing:</strong> Comunicación personalizada con cada cliente</li>
+                <li><strong>Análisis predictivo:</strong> Anticipar demanda y optimizar compras</li>
+            </ol>
+            
+            <h2>4. Menús reducidos y especializados</h2>
+            
+            <p>La era de las cartas interminables ha terminado. Los establecimientos más exitosos están optando por menús más cortos pero mejor ejecutados, con especialización en ciertos productos o técnicas culinarias.</p>
+            
+            <h2>5. Bienestar y opciones saludables</h2>
+            
+            <p>La demanda de opciones más saludables, veganas, vegetarianas y libres de alérgenos continúa creciendo. Los establecimientos deben ofrecer alternativas sin comprometer el sabor ni la experiencia.</p>
+            
+            <p>Esto no significa eliminar las opciones indulgentes, sino ofrecer un balance que permita a cada cliente encontrar algo que se adapte a sus necesidades y preferencias.</p>
+            
+            <h2>Conclusión</h2>
+            
+            <p>El 2026 será un año de transformación para la industria gastronómica. Los establecimientos que se adapten a estas tendencias estarán mejor posicionados para prosperar en un mercado cada vez más competitivo.</p>
+            
+            <p>En <strong>Círculo Gastro</strong>, estamos comprometidos a acompañarte en este proceso de evolución. <a href="../index.html#pricing">Conoce nuestros planes de membresía</a> y accede a capacitaciones, recursos y una red de contactos que impulsarán tu negocio.</p>
+            
+        </div>
+        
+        <!-- INFORMACIÓN DEL AUTOR -->
+        <div class="article-author">
+            <!-- CAMBIAR: Foto del autor -->
+            <img src="../img/blog/autor-maria.jpg" alt="María García" class="author-avatar">
+            <div class="author-info">
+                <!-- CAMBIAR: Nombre y descripción del autor -->
+                <h4>María García</h4>
+                <p>Editora de contenidos en Círculo Gastro. Especialista en tendencias gastronómicas y comunicación para la industria de hospitalidad.</p>
+            </div>
+        </div>
+        
+        <!-- COMPARTIR EN REDES -->
+        <div class="article-share">
+            <span>Compartir:</span>
+            <a href="#" class="share-btn" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn" title="Compartir en Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="share-btn" title="Compartir en LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="share-btn" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </main>
+
+    <!-- ARTÍCULOS RELACIONADOS -->
+    <section class="related-articles">
+        <h2>Artículos Relacionados</h2>
+        <div class="related-grid">
+            
+            <!-- Artículo relacionado 1 -->
+            <article class="blog-card">
+                <a href="nuevas-regulaciones-2026.html" class="blog-link-wrapper">
+                    <div class="blog-image">
+                        <img src="../img/blog/regulaciones.jpg" alt="Nuevas regulaciones">
+                        <span class="blog-category">Normativa</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar"></i> 10 Febrero 2026</span>
+                        <h3>Nuevas regulaciones para establecimientos nocturnos</h3>
+                        <span class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+            <!-- Artículo relacionado 2 -->
+            <article class="blog-card">
+                <a href="diseno-interior-experiencia.html" class="blog-link-wrapper">
+                    <div class="blog-image">
+                        <img src="../img/blog/diseno-interior.jpg" alt="Diseño de interiores">
+                        <span class="blog-category">Diseño</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar"></i> 5 Febrero 2026</span>
+                        <h3>Cómo el diseño interior impacta la experiencia del cliente</h3>
+                        <span class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </article>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="partners">
+            <div class="partner-name">Asobares Colombia</div>
+            <div class="partner-name">Nightlife International</div>
+            <div class="partner-name">Expobar</div>
+            <div class="partner-name">Expo DJ</div>
+        </div>
+        <p class="footer-copy">© 2026 Círculo Gastro. www.asobares.org</p>
+    </footer>
+
+</body>
+</html>
