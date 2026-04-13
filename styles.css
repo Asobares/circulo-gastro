@@ -670,6 +670,65 @@ section {
 
 /* --- FOOTER --- */
 
+/* --- ABOUT SECTION --- */
+.about-section {
+    background: #ffffff;
+    padding: 100px 10%;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: #f8f8f8;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.about-card.about-main {
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+.about-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.about-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #0a0a0a;
+}
+
+.about-card.about-main h3 {
+    color: #ffffff;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-card.about-main p {
+    color: #aaa;
+}
+
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- ALLIES SECTION --- */
 .allies-section {
     background: #ffffff;
