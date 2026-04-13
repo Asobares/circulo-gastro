@@ -1116,6 +1116,20 @@ footer {
     width: 20px;
 }
 
+.footer-instagram {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-instagram:hover {
+    color: var(--text-white);
+}
+
+.footer-instagram i {
+    margin-right: 10px;
+}
+
 .footer-social {
     display: flex;
     gap: 12px;

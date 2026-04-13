@@ -432,9 +432,7 @@
                 <h3>Contáctanos</h3>
                 <p><i class="fas fa-envelope"></i> circulogastro@asobares.org</p>
                 <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/circulo_gastro/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p><a href="https://www.instagram.com/circulo_gastro/" target="_blank" class="footer-instagram"><i class="fab fa-instagram"></i> @circulo_gastro</a></p>
             </div>
             
             <div class="footer-links">
@@ -458,7 +456,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Menú móvil
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -473,11 +471,4 @@
         document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-   
+                mobileMenuBtn.innerHTML =
