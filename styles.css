@@ -51,6 +51,11 @@ nav {
     padding: 20px 5%;
     background: rgba(10, 10, 10, 0.95);
     position: fixed;
+    /* Sin top/left el nav queda en su posición estática: en los artículos el
+       margin-top del hero se colapsa a través del body y lo arrastra 140px
+       hacia abajo, dejándolo flotando sobre el texto al hacer scroll. */
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
