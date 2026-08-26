@@ -901,8 +901,27 @@ section {
     overflow: hidden;
 }
 
+/* La destacada ocupa dos filas de la grilla: la imagen absorbe el alto
+   sobrante para que no quede un vacío debajo del texto. */
+.blog-card.blog-featured .blog-link-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .blog-card.blog-featured .blog-image {
-    height: 280px;
+    height: auto;
+    min-height: 280px;
+    flex: 1;
+}
+
+.blog-card.blog-featured .blog-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blog-card.blog-featured .blog-content {
+    flex-shrink: 0;
 }
 
 .blog-image img {
@@ -1287,6 +1306,8 @@ footer {
     
     .blog-card.blog-featured .blog-image {
         height: 200px;
+        min-height: 0;
+        flex: none;
     }
     
     .blog-card.blog-featured h3 {

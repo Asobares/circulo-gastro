@@ -33,6 +33,16 @@
     z-index: 0;
 }
 
+/* Modificador para heros con foto clara: el degradado por defecto no da
+   contraste suficiente y el título blanco se pierde. */
+.article-hero.hero-light::before {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.45) 40%,
+        rgba(0, 0, 0, 0.92) 100%
+    );
+}
+
 .article-hero-content {
     position: relative;
     z-index: 1;
