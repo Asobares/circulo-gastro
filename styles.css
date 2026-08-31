@@ -816,35 +816,28 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    /* Cada logo trae su propio fondo: los que tienen un color sólido pintan
+       la tarjeta de ese color (via --tile) para que no se vea el recuadro
+       de la imagen. Los transparentes de tinta oscura usan --tile: #fff. */
+    background: var(--tile, rgba(255, 255, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     transition: all 0.3s ease;
     width: 100%;
     height: 120px;
+    overflow: hidden;
 }
 
 .restaurant-logo:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--tile, rgba(255, 255, 255, 0.1));
     transform: scale(1.05);
-}
-
-/* Los logos llegan en colores muy distintos: los oscuros y los que traen
-   fondo blanco incrustado no se leen sobre el fondo oscuro de la sección,
-   así que van sobre una tarjeta blanca. Los claros conservan la oscura. */
-.restaurant-logo.logo-fondo-claro {
-    background: #ffffff;
-    border-color: rgba(255, 255, 255, 0.85);
-}
-
-.restaurant-logo.logo-fondo-claro:hover {
-    background: #ffffff;
+    border-color: rgba(255, 255, 255, 0.22);
 }
 
 .restaurant-logo img {
-    max-width: 120px;
-    max-height: 80px;
+    max-width: 100%;
+    max-height: 84px;
     object-fit: contain;
     transition: all 0.3s ease;
 }
