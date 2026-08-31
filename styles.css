@@ -818,6 +818,7 @@ section {
     justify-content: center;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     transition: all 0.3s ease;
     width: 100%;
@@ -827,6 +828,18 @@ section {
 .restaurant-logo:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
+}
+
+/* Los logos llegan en colores muy distintos: los oscuros y los que traen
+   fondo blanco incrustado no se leen sobre el fondo oscuro de la sección,
+   así que van sobre una tarjeta blanca. Los claros conservan la oscura. */
+.restaurant-logo.logo-fondo-claro {
+    background: #ffffff;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.restaurant-logo.logo-fondo-claro:hover {
+    background: #ffffff;
 }
 
 .restaurant-logo img {
