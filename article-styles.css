@@ -181,6 +181,19 @@
     color: var(--text-gray);
 }
 
+.article-body figure {
+    max-width: 560px;
+    margin: 40px auto;
+}
+
+.article-body figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
 .article-body .news-tag {
     display: inline-block;
     border: 1px solid #333;
