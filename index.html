@@ -821,23 +821,24 @@
                 }
 
                 // Correo de confirmación: si falla, la inscripción ya quedó guardada
-                fetch(SUPABASE_URL + '/functions/v1/send-confirmation', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + SUPABASE_KEY
-                    },
-                    body: JSON.stringify({
-                        email: payload.email,
-                        nombre: payload.nombre + ' ' + payload.apellidos,
-                        evento: 'Círculo Gastro',
-                        fecha: '',
-                        hora: '',
-                        lugar: '',
-                        direccion: '',
-                        link: 'https://www.circulogastro.com'
-                    })
-                }).catch(() => {});
+                fetch('https://pbqmkodwmntujezbokgo.supabase.co/functions/v1/send-confirmation', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBicW1rb2R3bW50dWplemJva2dvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4NTQzOTIsImV4cCI6MjA4NjQzMDM5Mn0.C9sw9cix0J9Z2eTh-lr_4S6_gZmHIVwpzsxrZMCKl34',
+                  },
+                  body: JSON.stringify({
+                    email:      payload.email,
+                    nombre:     payload.nombre + ' ' + payload.apellidos,
+                    evento:     'Círculo Gastro — Comunidad Gastronómica de Colombia',
+                    fecha:      '',
+                    hora:       '',
+                    lugar:      'Quedaste registrado en nuestra base de datos de profesionales del sector gastronómico de Colombia. Pronto te contactaremos con novedades, eventos y oportunidades.',
+                    direccion:  '',
+                    link:       'https://www.circulogastro.com',
+                    link_label: 'Visitar Círculo Gastro →',
+                  })
+                });
 
                 card.hidden = true;
                 success.hidden = false;
