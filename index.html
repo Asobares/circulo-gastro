@@ -25,6 +25,7 @@
             <a href="#aliados">Aliados</a>
             <a href="#restaurantes">Restaurantes</a>
             <a href="#blog">Blog</a>
+            <a href="#inscripcion">Inscríbete</a>
             <a href="#contacto">Contacto</a>
         </div>
     </nav>
@@ -39,6 +40,7 @@
         <a href="#aliados">Aliados</a>
         <a href="#restaurantes">Restaurantes</a>
         <a href="#blog">Blog</a>
+        <a href="#inscripcion">Inscríbete</a>
         <a href="#contacto" class="mobile-cta">Contáctanos</a>
     </div>
 
@@ -48,7 +50,7 @@
             <span class="subtitle">Una iniciativa de Asobares Colombia</span>
             <h1>Fortaleciendo las zonas<br><span>Gastronómicas y de Entretenimiento</span></h1>
             <p class="hero-description">Articulamos empresarios, autoridades y comunidades para resignificar los espacios donde opera la industria.</p>
-            <a href="https://asobares.org/registro/" target="_blank" class="btn-hero">Únete al Círculo Gastro</a>
+            <a href="#inscripcion" class="btn-hero">Únete al Círculo Gastro</a>
         </div>
     </header>
 
@@ -494,6 +496,199 @@
         </ul>
     </section>
 
+    <!-- INSCRIPCIÓN -->
+    <section class="signup-section" id="inscripcion">
+        <h2 class="section-title">Inscríbete</h2>
+        <p class="section-subtitle">Haz parte del Círculo Gastro y recibe información, capacitaciones y novedades del sector</p>
+
+        <div class="signup-card" id="signupCard">
+            <form id="signupForm" novalidate>
+                <h3 class="signup-group-title">Datos personales</h3>
+                <div class="signup-grid">
+                    <label class="signup-field">
+                        <span>Tipo ID *</span>
+                        <select name="tipo_identificacion" required>
+                            <option value="">Selecciona</option>
+                            <option value="CÉDULA">CÉDULA</option>
+                            <option value="CÉDULA DE EXTRANJERÍA">CÉDULA DE EXTRANJERÍA</option>
+                            <option value="PASAPORTE">PASAPORTE</option>
+                        </select>
+                    </label>
+                    <label class="signup-field">
+                        <span>Nº Identificación *</span>
+                        <input type="text" name="numero_identificacion" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Género *</span>
+                        <select name="genero" required>
+                            <option value="">Selecciona</option>
+                            <option value="MASCULINO">MASCULINO</option>
+                            <option value="FEMENINO">FEMENINO</option>
+                            <option value="OTRO">OTRO</option>
+                            <option value="NO SUMINISTRA">NO SUMINISTRA</option>
+                        </select>
+                    </label>
+                    <label class="signup-field">
+                        <span>Nombre *</span>
+                        <input type="text" name="nombre" autocomplete="given-name" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Apellidos *</span>
+                        <input type="text" name="apellidos" autocomplete="family-name" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Departamento *</span>
+                        <select name="departamento" required>
+                            <option value="">Selecciona</option>
+                            <option value="Amazonas">Amazonas</option>
+                            <option value="Antioquia">Antioquia</option>
+                            <option value="Arauca">Arauca</option>
+                            <option value="Atlántico">Atlántico</option>
+                            <option value="Bolívar">Bolívar</option>
+                            <option value="Boyacá">Boyacá</option>
+                            <option value="Bogotá D.C.">Bogotá D.C.</option>
+                            <option value="Caldas">Caldas</option>
+                            <option value="Caquetá">Caquetá</option>
+                            <option value="Casanare">Casanare</option>
+                            <option value="Cauca">Cauca</option>
+                            <option value="Cesar">Cesar</option>
+                            <option value="Chocó">Chocó</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Cundinamarca">Cundinamarca</option>
+                            <option value="Guainía">Guainía</option>
+                            <option value="Guaviare">Guaviare</option>
+                            <option value="Huila">Huila</option>
+                            <option value="La Guajira">La Guajira</option>
+                            <option value="Magdalena">Magdalena</option>
+                            <option value="Meta">Meta</option>
+                            <option value="Nariño">Nariño</option>
+                            <option value="Norte de Santander">Norte de Santander</option>
+                            <option value="Putumayo">Putumayo</option>
+                            <option value="Quindío">Quindío</option>
+                            <option value="Risaralda">Risaralda</option>
+                            <option value="San Andrés Providencia y Santa Catalina">San Andrés Providencia y Santa Catalina</option>
+                            <option value="Santander">Santander</option>
+                            <option value="Sucre">Sucre</option>
+                            <option value="Tolima">Tolima</option>
+                            <option value="Valle del Cauca">Valle del Cauca</option>
+                            <option value="Vaupés">Vaupés</option>
+                            <option value="Vichada">Vichada</option>
+                            <option value="Internacional">Internacional</option>
+                        </select>
+                    </label>
+                    <label class="signup-field">
+                        <span>Ciudad *</span>
+                        <input type="text" name="ciudad" autocomplete="address-level2" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Teléfono celular *</span>
+                        <input type="tel" name="telefono" inputmode="numeric" maxlength="10" placeholder="3001234567" autocomplete="tel-national" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Correo electrónico *</span>
+                        <input type="email" name="email" autocomplete="email" required>
+                    </label>
+                    <label class="signup-field">
+                        <span>Profesión u Oficio *</span>
+                        <select name="profesion" required>
+                            <option value="">Selecciona</option>
+                            <option value="ABOGADO(A)">ABOGADO(A)</option>
+                            <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                            <option value="AGENTE TURÍSTICO">AGENTE TURÍSTICO</option>
+                            <option value="ANALISTA CARRERAS AFINES">ANALISTA CARRERAS AFINES</option>
+                            <option value="ARQUITECTO(A)">ARQUITECTO(A)</option>
+                            <option value="ARTISTA">ARTISTA</option>
+                            <option value="ASESOR(A)">ASESOR(A)</option>
+                            <option value="ASISTENTE">ASISTENTE</option>
+                            <option value="BARISTA">BARISTA</option>
+                            <option value="BARTENDER">BARTENDER</option>
+                            <option value="CAJERO(A)">CAJERO(A)</option>
+                            <option value="CEO">CEO</option>
+                            <option value="CHEF">CHEF</option>
+                            <option value="COCINERO(A)">COCINERO(A)</option>
+                            <option value="CONSULTOR(A)">CONSULTOR(A)</option>
+                            <option value="CONTADOR(A)">CONTADOR(A)</option>
+                            <option value="COORDINADOR(A)">COORDINADOR(A)</option>
+                            <option value="DIRECTOR(A)">DIRECTOR(A)</option>
+                            <option value="DISEÑADOR(A)">DISEÑADOR(A)</option>
+                            <option value="DJ">DJ</option>
+                            <option value="DOCENTE CARRERAS AFINES">DOCENTE CARRERAS AFINES</option>
+                            <option value="EMPRESARIO(A)">EMPRESARIO(A)</option>
+                            <option value="ENTIDAD-GOBIERNO">ENTIDAD-GOBIERNO</option>
+                            <option value="ESTUDIANTE CARRERAS AFINES">ESTUDIANTE CARRERAS AFINES</option>
+                            <option value="GERENTE">GERENTE</option>
+                            <option value="GERENTE DE MARCA">GERENTE DE MARCA</option>
+                            <option value="GREMIO">GREMIO</option>
+                            <option value="INGENIERO(A)">INGENIERO(A)</option>
+                            <option value="INGENIERO(A) DE SONIDO">INGENIERO(A) DE SONIDO</option>
+                            <option value="JEFE DE COMPRAS">JEFE DE COMPRAS</option>
+                            <option value="MANAGER">MANAGER</option>
+                            <option value="MARKETING">MARKETING</option>
+                            <option value="MESERO(A)">MESERO(A)</option>
+                            <option value="MÚSICO">MÚSICO</option>
+                            <option value="OPERADOR(A) LOGÍSTICO">OPERADOR(A) LOGÍSTICO</option>
+                            <option value="ORGANIZADOR(A) DE EVENTOS">ORGANIZADOR(A) DE EVENTOS</option>
+                            <option value="PERIODISTA">PERIODISTA</option>
+                            <option value="PRODUCTOR(A)">PRODUCTOR(A)</option>
+                            <option value="PROPIETARIO(A)">PROPIETARIO(A)</option>
+                            <option value="PROVEEDOR(A)">PROVEEDOR(A)</option>
+                            <option value="RECURSOS HUMANOS">RECURSOS HUMANOS</option>
+                            <option value="RELACIONES PÚBLICAS">RELACIONES PÚBLICAS</option>
+                            <option value="REPRESENTANTE LEGAL">REPRESENTANTE LEGAL</option>
+                            <option value="SOMMELIER">SOMMELIER</option>
+                            <option value="TÉCNICO CARRERAS AFINES">TÉCNICO CARRERAS AFINES</option>
+                            <option value="TRADUCTOR">TRADUCTOR</option>
+                            <option value="OTRO">OTRO</option>
+                            <option value="NO SUMINISTRA">NO SUMINISTRA</option>
+                        </select>
+                    </label>
+                </div>
+
+                <h3 class="signup-group-title">Empresa / Establecimiento <small>(opcional)</small></h3>
+                <div class="signup-grid">
+                    <label class="signup-field">
+                        <span>Nombre o Razón Social</span>
+                        <input type="text" name="empresa_nombre" autocomplete="organization">
+                    </label>
+                    <label class="signup-field">
+                        <span>NIT</span>
+                        <input type="text" name="empresa_nit">
+                    </label>
+                    <label class="signup-field">
+                        <span>Dirección</span>
+                        <input type="text" name="empresa_direccion">
+                    </label>
+                    <label class="signup-field">
+                        <span>Teléfono empresa</span>
+                        <input type="tel" name="empresa_telefono">
+                    </label>
+                    <label class="signup-field">
+                        <span>Representante Legal</span>
+                        <input type="text" name="empresa_representante">
+                    </label>
+                    <label class="signup-field">
+                        <span>Cédula Representante</span>
+                        <input type="text" name="empresa_cedula_rep">
+                    </label>
+                    <label class="signup-field">
+                        <span>Correo empresa</span>
+                        <input type="email" name="empresa_email">
+                    </label>
+                </div>
+
+                <p class="signup-error" id="signupError" role="alert"></p>
+                <button type="submit" class="btn-hero signup-submit" id="signupSubmit">Enviar inscripción</button>
+            </form>
+        </div>
+
+        <div class="signup-card signup-success" id="signupSuccess" hidden>
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Inscripción exitosa!</h3>
+            <p>Gracias por unirte al <strong>Círculo Gastro</strong>. Te enviamos un correo de confirmación con los detalles.</p>
+            <a href="#blog" class="btn-hero">Ver noticias del sector</a>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer id="contacto">
         <div class="footer-content">
@@ -542,6 +737,113 @@
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
+
+        // Formulario de inscripción → Supabase
+        (function() {
+            const SUPABASE_URL = 'https://pbqmkodwmntujezbokgo.supabase.co';
+            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBicW1rb2R3bW50dWplemJva2dvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4NTQzOTIsImV4cCI6MjA4NjQzMDM5Mn0.C9sw9cix0J9Z2eTh-lr_4S6_gZmHIVwpzsxrZMCKl34';
+
+            const form = document.getElementById('signupForm');
+            const card = document.getElementById('signupCard');
+            const success = document.getElementById('signupSuccess');
+            const submitBtn = document.getElementById('signupSubmit');
+            const errBox = document.getElementById('signupError');
+
+            function showError(msg, field) {
+                errBox.textContent = msg;
+                errBox.style.display = 'block';
+                if (field) field.focus();
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                errBox.style.display = 'none';
+
+                const d = Object.fromEntries(new FormData(form).entries());
+                Object.keys(d).forEach(k => { d[k] = d[k].trim(); });
+
+                const missing = form.querySelector('[required]:invalid');
+                if (missing) {
+                    return showError('Completa todos los campos obligatorios (*) con un formato válido.', missing);
+                }
+                if (!/^\d{10}$/.test(d.telefono)) {
+                    return showError('El teléfono celular debe tener exactamente 10 dígitos (ej: 3001234567).', form.telefono);
+                }
+                if (form.empresa_email.value && !form.empresa_email.checkValidity()) {
+                    return showError('El correo de la empresa no es válido.', form.empresa_email);
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+
+                const payload = {
+                    tipo_identificacion: d.tipo_identificacion,
+                    numero_identificacion: d.numero_identificacion,
+                    genero: d.genero,
+                    nombre: d.nombre,
+                    apellidos: d.apellidos,
+                    departamento: d.departamento,
+                    ciudad: d.ciudad,
+                    telefono: d.telefono,
+                    email: d.email.toLowerCase(),
+                    profesion: d.profesion,
+                    empresa_nombre: d.empresa_nombre || null,
+                    empresa_nit: d.empresa_nit || null,
+                    empresa_direccion: d.empresa_direccion || null,
+                    empresa_telefono: d.empresa_telefono || null,
+                    empresa_representante: d.empresa_representante || null,
+                    empresa_cedula_rep: d.empresa_cedula_rep || null,
+                    empresa_email: d.empresa_email ? d.empresa_email.toLowerCase() : null,
+                    estado: 'inscrito'
+                };
+
+                try {
+                    const res = await fetch(SUPABASE_URL + '/rest/v1/inscripciones_circulo_gastro', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'apikey': SUPABASE_KEY,
+                            'Authorization': 'Bearer ' + SUPABASE_KEY,
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!res.ok) {
+                        const body = await res.json().catch(() => ({}));
+                        throw new Error(body.code === '23505' ? 'duplicado' : (body.message || res.status));
+                    }
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar inscripción';
+                    return showError(err.message === 'duplicado'
+                        ? 'Ya existe una inscripción con estos datos.'
+                        : 'Ocurrió un error al enviar tu inscripción. Por favor intenta de nuevo.');
+                }
+
+                // Correo de confirmación: si falla, la inscripción ya quedó guardada
+                fetch(SUPABASE_URL + '/functions/v1/send-confirmation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + SUPABASE_KEY
+                    },
+                    body: JSON.stringify({
+                        email: payload.email,
+                        nombre: payload.nombre + ' ' + payload.apellidos,
+                        evento: 'Círculo Gastro',
+                        fecha: '',
+                        hora: '',
+                        lugar: '',
+                        direccion: '',
+                        link: 'https://www.circulogastro.com'
+                    })
+                }).catch(() => {});
+
+                card.hidden = true;
+                success.hidden = false;
+                document.getElementById('inscripcion').scrollIntoView({ behavior: 'smooth' });
+            });
+        })();
     </script>
 
 </body>
